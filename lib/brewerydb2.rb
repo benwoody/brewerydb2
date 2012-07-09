@@ -7,7 +7,7 @@ require 'hashie'
 #   config.apikey = ''
 # end
 
-class BreweryDb
+class BreweryDb2
   include HTTParty
   base_uri 'http://api.brewerydb.com/v2'
   format :json
