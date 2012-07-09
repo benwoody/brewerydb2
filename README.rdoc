@@ -10,9 +10,9 @@ This update adds support for every API endpoint that allows GETs, including the 
 * You can pass any of the options specified in the BreweryDB API
 
 In Rails, you can configure it with initializer by creating a file
-named config/initializers/brewerydb.rb
+named config/initializers/brewerydb2.rb
 
-  BreweryDb.configure do |config|
+  BreweryDb2.configure do |config|
     config.apikey = 'YOUR_API_KEY'
   end
 
