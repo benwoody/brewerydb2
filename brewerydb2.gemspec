@@ -4,7 +4,7 @@ require "brewerydb2/version"
 
 Gem::Specification.new do |s|
   s.name        = "brewerydb2"
-  s.version     = Brewerydb::VERSION
+  s.version     = Brewerydb2::VERSION
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Ben Woodall"]
   s.email       = ["mail@benwoodall.com"]
@@ -12,7 +12,7 @@ Gem::Specification.new do |s|
   s.summary     = %q{Simple Wrapper around the BreweryDB API v2}
   s.description = %q{An API wrapper for PintLabs BreweryDB}
 
-  s.rubyforge_project = "brewerydb"
+  s.rubyforge_project = "brewerydb2"
 
   s.add_dependency('httparty', '>= 0.7.3')
   s.add_dependency('hashie', '>= 1.0.0')
