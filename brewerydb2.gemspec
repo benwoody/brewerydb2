@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.name        = "brewerydb2"
   s.version     = Brewerydb2::VERSION
   s.platform    = Gem::Platform::RUBY
-  s.authors     = ["Ben Woodall,Chris Mar"]
+  s.authors     = ["Ben Woodall","Chris Mar"]
   s.email       = ["mail@benwoodall.com"]
   s.homepage    = "https://github.com/benwoody/brewerydb2"
   s.summary     = %q{Simple Wrapper around the BreweryDB API v2}
