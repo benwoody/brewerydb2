@@ -1,6 +1,9 @@
-== BreweryDB API
+== BreweryDB2 API
 
 This is a simple wrapper around the BreweryDB API packaged as a ruby gem.
+This is an updated version based on https://github.com/cmar/brewerydb. However, PintLabs has updated BreweryDB's API to version 2 which no longer works with cmars gem.
+
+This update adds support for every API endpoint that allows GETs, including the Premium endpoints.
 
 * Wraps all the API documented here: http://www.brewerydb.com/api/documentation
 * You will need to register for an API key: http://www.brewerydb.com/api/register
@@ -17,6 +20,10 @@ Remember: Good People Drink Good Beer!
 
 == Releases
 
+0.1.0
+* updated to work with BreweryDB APIv2
+
+==== Updates below from https://github.com/cmar/brewerydb
 0.0.4
 * properly documenting the hashie dependency
 
@@ -29,58 +36,3 @@ Remember: Good People Drink Good Beer!
 
 0.0.1
 * initial release
-
-== Examples
-
-You can fetch beers:
-
-  response = BreweryDb.beers
-  
-  response.beer.each do |beer|
-    puts "#{beer.id}: #{beer.name}"
-  end if response.beer
-  
-  puts response.pages.page
-  puts response.pages.total
-
-Get a list of beers on a specific page:
-
-  response = BreweryDb.beers(:page => 10, :metadata => true) 
-  response.beer.each do |beer|
-    puts "#{beer.id}: #{beer.name}"
-  end if response.beer
-
-Searching for Beers
-  results = BreweryDb.search(:q => 'stone')
-  results.result.each do |result|
-    puts "#{result.id}: #{result.name} (#{result['type']})"
-  end if results.result #check if there is a result before looping
-
-  puts "Page: #{results.pages.page}"
-  puts "Total: #{results.pages.total}"
-
-Get a specific beer or brewery by id:
-
-  response = BreweryDb.beer(1196)
-  puts response.name
-
-  response = BreweryDb.brewery(1000)
-  puts response.name
-
-Get all the breweries around Washington DC:
-
-  response = BreweryDb.breweries(:geo => 1,
-                                 :lat => 38.875532,
-                                 :lng => -77.007294,
-                                 :radius => 30,
-                                 :units => 'm')
-  response.brewery.each do |brewery|
-    puts brewery.name
-  end if response.brewery
-
-  puts response.pages.page
-  puts response.pages.total
-
-Categories, Styles and Glassware work as well.
-
-Additional working examples are in the examples directory
